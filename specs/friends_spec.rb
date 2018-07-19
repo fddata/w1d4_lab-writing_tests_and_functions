@@ -118,6 +118,13 @@ class TestFriends < MiniTest::Test
 
 
   # 7. For two given people, allow the first person to loan a given value of money to the other
+  def test_loan
+    loan(@person2, @person1, 1)
+    lender_new = @person2[:monies]
+    lendee_new = @person1[:monies]
+    assert_equal(1, lender_new)
+    assert_equal(2, lendee_new)
+end
   # (hint: our function will probably need 3 arguments passed to it... the lender, the lendee, and the amount for this function)
   # (hint2: You should test if both the lender's and the lendee's money have changed, maybe two assertions?)
 

@@ -26,3 +26,9 @@ def total_money(people)
   end
   return total
 end
+
+#PQUESTION 7
+def loan(lender, lendee, amount)
+   lender[:monies] -= amount
+   lendee[:monies] += amount
+end

@@ -108,6 +108,12 @@ class TestFriends < MiniTest::Test
 
 
   # 6. Find the total of everyone's money
+  def test_total_money
+    result = total_money(@people)
+    assert_equal(143, result)
+  end
+
+
   # (hint: use the @people array, remember how we checked the total number of eggs yesterday?)
 
 

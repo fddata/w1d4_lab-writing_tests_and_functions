@@ -119,21 +119,27 @@ class TestFriends < MiniTest::Test
 
   # 7. For two given people, allow the first person to loan a given value of money to the other
   def test_loan
-    loan(@person2, @person1, 1)
-    lender_new = @person2[:monies]
-    lendee_new = @person1[:monies]
-    assert_equal(1, lender_new)
-    assert_equal(2, lendee_new)
-end
+    loan(@person3, @person1, 5)
+    assert_equal(15, @person3[:monies])
+    assert_equal(6, @person1[:monies])
+  end
   # (hint: our function will probably need 3 arguments passed to it... the lender, the lendee, and the amount for this function)
   # (hint2: You should test if both the lender's and the lendee's money have changed, maybe two assertions?)
 
 
   # 8. Find the set of everyone's favourite food joined together
   # (hint: concatenate the favourites/snack arrays together)
+  def test_food_joiner
+    result = food_joiner(@people)
+    assert_equal(7 ,result.length)
+  end
 
 
   # 9. Find people with no friends
   # (hint: return an array, there might be more people in the future with no friends!)
+  def test_no_friends
+    result = no_friends(@people)
+    assert_equal(["Daphne"], result)
+  end
 
 end
